@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Cosigner Credit Impact: Risks, Liability & Exit Options | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function CosignerPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Cosigner Credit Impact: Risks, Liability & Exit Options | LoanPay Credit" description="What cosigning does to your credit — equal liability, late-payment spillover, DTI effects — plus release and exit options, with examples and FAQs." slug="/cosigner-credit-impact" />
+      <FaqJsonLd items={[{"q":"Can I stop being a cosigner anytime?","a":"No. Unilateral exit is generally impossible. Release requires lender approval, refinancing, or full payoff."},{"q":"Does cosigning hurt my DTI?","a":"Yes. The full payment counts in your ratios for mortgages and other loans, even with perfect borrower payments."},{"q":"Cosigner vs. co-borrower?","a":"Functionally similar liability. Co-borrowers typically share account access and benefit; cosigners guarantee without using the asset."},{"q":"What beats cosigning?","a":"Down-payment gifts, secured-card funding, builder-loan sponsorship, or authorized-user history — help that cannot metastasize into your DTI."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Building &middot; Shared liability
@@ -23,8 +27,12 @@ export default function CosignerPage() {
           counted in full in your debt ratios. Understand the mechanics, the relationship risks,
           and the exit routes before signing anything.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -143,27 +151,31 @@ export default function CosignerPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I stop being a cosigner anytime?</h3>
-              <p className="mt-1">No. Unilateral exit is generally impossible. Release requires lender approval, refinancing, or full payoff.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does cosigning hurt my DTI?</h3>
-              <p className="mt-1">Yes. The full payment counts in your ratios for mortgages and other loans, even with perfect borrower payments.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Cosigner vs. co-borrower?</h3>
-              <p className="mt-1">Functionally similar liability. Co-borrowers typically share account access and benefit; cosigners guarantee without using the asset.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What beats cosigning?</h3>
-              <p className="mt-1">Down-payment gifts, secured-card funding, builder-loan sponsorship, or authorized-user history — help that cannot metastasize into your DTI.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I stop being a cosigner anytime?</summary>
+              <p className="mt-2">No. Unilateral exit is generally impossible. Release requires lender approval, refinancing, or full payoff.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does cosigning hurt my DTI?</summary>
+              <p className="mt-2">Yes. The full payment counts in your ratios for mortgages and other loans, even with perfect borrower payments.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Cosigner vs. co-borrower?</summary>
+              <p className="mt-2">Functionally similar liability. Co-borrowers typically share account access and benefit; cosigners guarantee without using the asset.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What beats cosigning?</summary>
+              <p className="mt-2">Down-payment gifts, secured-card funding, builder-loan sponsorship, or authorized-user history — help that cannot metastasize into your DTI.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

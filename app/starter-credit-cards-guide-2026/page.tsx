@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Starter Credit Cards Guide 2026: First Card Paths Compared | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function StarterCards2026Page() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Starter Credit Cards Guide 2026: First Card Paths Compared | LoanPay Credit" description="Compare first-card paths in 2026 — secured, student, and retail cards — with costs, approval odds, and a 12-month example for thin files." slug="/starter-credit-cards-guide-2026" />
+      <FaqJsonLd items={[{"q":"Secured or student card first?","a":"Enrolled students should try student cards first since they require no deposit. Non-students generally start with a no-fee secured card."},{"q":"How many cards should a beginner open?","a":"One. Master on-time payments and utilization on a single tradeline for 8–12 months before adding a second."},{"q":"Do debit cards build credit?","a":"No. Debit activity is not reported to bureaus. Only credit accounts, reported rent, or builder products create history."},{"q":"When can I get a rewards card?","a":"Many borrowers qualify for entry-level cash-back cards after 8–12 clean months with utilization under 30%."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Cards &middot; First cards 2026
@@ -23,8 +27,12 @@ export default function StarterCards2026Page() {
           approval logic, and upgrade trajectories &mdash; then follow the 12-month plan that fits
           your situation.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -146,27 +154,31 @@ export default function StarterCards2026Page() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Secured or student card first?</h3>
-              <p className="mt-1">Enrolled students should try student cards first since they require no deposit. Non-students generally start with a no-fee secured card.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How many cards should a beginner open?</h3>
-              <p className="mt-1">One. Master on-time payments and utilization on a single tradeline for 8&ndash;12 months before adding a second.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do debit cards build credit?</h3>
-              <p className="mt-1">No. Debit activity is not reported to bureaus. Only credit accounts, reported rent, or builder products create history.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">When can I get a rewards card?</h3>
-              <p className="mt-1">Many borrowers qualify for entry-level cash-back cards after 8&ndash;12 clean months with utilization under 30%.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Secured or student card first?</summary>
+              <p className="mt-2">Enrolled students should try student cards first since they require no deposit. Non-students generally start with a no-fee secured card.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How many cards should a beginner open?</summary>
+              <p className="mt-2">One. Master on-time payments and utilization on a single tradeline for 8&ndash;12 months before adding a second.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do debit cards build credit?</summary>
+              <p className="mt-2">No. Debit activity is not reported to bureaus. Only credit accounts, reported rent, or builder products create history.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">When can I get a rewards card?</summary>
+              <p className="mt-2">Many borrowers qualify for entry-level cash-back cards after 8&ndash;12 clean months with utilization under 30%.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

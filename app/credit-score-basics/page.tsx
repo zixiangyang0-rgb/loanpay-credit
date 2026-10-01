@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Credit Score Basics: What 300–850 Means in 2026 | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function CreditScoreBasicsPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Credit Score Basics: What 300–850 Means in 2026 | LoanPay Credit" description="Learn what a US credit score is, the FICO 300–850 bands, who uses your score, and the first habits that build it — with tables, examples, and FAQs." slug="/credit-score-basics" />
+      <FaqJsonLd items={[{"q":"What is a good credit score in 2026?","a":"FICO calls 670–739 good, 740–799 very good, and 800–850 exceptional. The national average sits near 714, inside the good band."},{"q":"Do I have one score or many?","a":"Many. Each bureau file combined with each model version produces its own number, and industry variants for mortgages, auto loans, and cards use 250–900 scales."},{"q":"Does checking my own score hurt it?","a":"No. Self-checks and preapprovals are soft inquiries with zero scoring impact. Only applications for credit generally create hard inquiries."},{"q":"How fast can a beginner get a score?","a":"FICO needs about six months of reported history; VantageScore can score after roughly one month. See our from-zero plan for the timeline."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Scores &middot; Start here
@@ -23,8 +27,12 @@ export default function CreditScoreBasicsPage() {
           judge risk. This guide explains the scale, the score bands, who checks your score, and
           the habits that move it &mdash; in plain English with real numbers.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -179,27 +187,31 @@ export default function CreditScoreBasicsPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is a good credit score in 2026?</h3>
-              <p className="mt-1">FICO calls 670&ndash;739 good, 740&ndash;799 very good, and 800&ndash;850 exceptional. The national average sits near 714, inside the good band.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I have one score or many?</h3>
-              <p className="mt-1">Many. Each bureau file combined with each model version produces its own number, and industry variants for mortgages, auto loans, and cards use 250&ndash;900 scales.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does checking my own score hurt it?</h3>
-              <p className="mt-1">No. Self-checks and preapprovals are soft inquiries with zero scoring impact. Only applications for credit generally create hard inquiries.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How fast can a beginner get a score?</h3>
-              <p className="mt-1">FICO needs about six months of reported history; VantageScore can score after roughly one month. See our from-zero plan for the timeline.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is a good credit score in 2026?</summary>
+              <p className="mt-2">FICO calls 670&ndash;739 good, 740&ndash;799 very good, and 800&ndash;850 exceptional. The national average sits near 714, inside the good band.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I have one score or many?</summary>
+              <p className="mt-2">Many. Each bureau file combined with each model version produces its own number, and industry variants for mortgages, auto loans, and cards use 250&ndash;900 scales.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does checking my own score hurt it?</summary>
+              <p className="mt-2">No. Self-checks and preapprovals are soft inquiries with zero scoring impact. Only applications for credit generally create hard inquiries.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How fast can a beginner get a score?</summary>
+              <p className="mt-2">FICO needs about six months of reported history; VantageScore can score after roughly one month. See our from-zero plan for the timeline.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

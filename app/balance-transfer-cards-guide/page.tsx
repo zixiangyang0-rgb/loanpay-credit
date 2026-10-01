@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Balance Transfer Cards Guide: Fees, APR Math & Payoff Plans | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function BalanceTransferGuidePage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Balance Transfer Cards Guide: Fees, APR Math & Payoff Plans | LoanPay Credit" description="How balance transfer cards work — transfer fees, intro APR windows, and payoff math — with comparison tables and a worked 0% example." slug="/balance-transfer-cards-guide" />
+      <FaqJsonLd items={[{"q":"Does a transfer hurt my score?","a":"Temporarily, via the inquiry and new account. Falling utilization as balances clear usually outweighs it within a few cycles."},{"q":"Can I transfer between same-bank cards?","a":"Usually no. Issuers exclude transfers from their own cards and affiliates. Check the offer terms before applying."},{"q":"What score qualifies?","a":"Long-window 0% offers generally favor scores of 670-plus with clean recent history. Shorter or secured options vary."},{"q":"Should I close the old card?","a":"Usually keep it open at zero. Closing cuts total limits, raising utilization, and eventually shortens average age."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Cards &middot; Debt strategy
@@ -23,8 +27,12 @@ export default function BalanceTransferGuidePage() {
           earns back its cost, which traps erase the savings, and how to build a payoff plan that
           finishes inside the window.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -139,27 +147,31 @@ export default function BalanceTransferGuidePage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does a transfer hurt my score?</h3>
-              <p className="mt-1">Temporarily, via the inquiry and new account. Falling utilization as balances clear usually outweighs it within a few cycles.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I transfer between same-bank cards?</h3>
-              <p className="mt-1">Usually no. Issuers exclude transfers from their own cards and affiliates. Check the offer terms before applying.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What score qualifies?</h3>
-              <p className="mt-1">Long-window 0% offers generally favor scores of 670-plus with clean recent history. Shorter or secured options vary.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should I close the old card?</h3>
-              <p className="mt-1">Usually keep it open at zero. Closing cuts total limits, raising utilization, and eventually shortens average age.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does a transfer hurt my score?</summary>
+              <p className="mt-2">Temporarily, via the inquiry and new account. Falling utilization as balances clear usually outweighs it within a few cycles.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I transfer between same-bank cards?</summary>
+              <p className="mt-2">Usually no. Issuers exclude transfers from their own cards and affiliates. Check the offer terms before applying.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What score qualifies?</summary>
+              <p className="mt-2">Long-window 0% offers generally favor scores of 670-plus with clean recent history. Shorter or secured options vary.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should I close the old card?</summary>
+              <p className="mt-2">Usually keep it open at zero. Closing cuts total limits, raising utilization, and eventually shortens average age.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

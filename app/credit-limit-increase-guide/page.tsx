@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Credit Limit Increase Guide: Timing, Scripts & Denials | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function LimitIncreasePage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Credit Limit Increase Guide: Timing, Scripts & Denials | LoanPay Credit" description="How to request a credit limit increase — timing, soft vs. hard pulls, income math, and denial next steps — with examples and FAQs." slug="/credit-limit-increase-guide" />
+      <FaqJsonLd items={[{"q":"Will requesting hurt my score?","a":"Soft-pull reviews cost nothing. Hard-pull requests cost a few points for about a year — ask the issuer which applies first."},{"q":"How much should I request?","a":"A moderate step — roughly 1.5 to 2 times the current limit — supported by income. Extreme requests invite denial or counteroffers."},{"q":"Do automatic increases count?","a":"Yes, identically. System-initiated increases carry the same utilization benefit with no request needed. Keep usage exemplary to trigger them."},{"q":"Should new borrowers request early?","a":"Wait at least six clean months. Early requests on thin files usually deny and waste hard pulls better saved for graduation products."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Cards &middot; Limits
@@ -23,8 +27,12 @@ export default function LimitIncreasePage() {
           when requested at the right moment with the right numbers. Learn the timing, the pull
           question, and the recovery plan if denied.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -138,27 +146,31 @@ export default function LimitIncreasePage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Will requesting hurt my score?</h3>
-              <p className="mt-1">Soft-pull reviews cost nothing. Hard-pull requests cost a few points for about a year — ask the issuer which applies first.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How much should I request?</h3>
-              <p className="mt-1">A moderate step — roughly 1.5 to 2 times the current limit — supported by income. Extreme requests invite denial or counteroffers.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do automatic increases count?</h3>
-              <p className="mt-1">Yes, identically. System-initiated increases carry the same utilization benefit with no request needed. Keep usage exemplary to trigger them.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should new borrowers request early?</h3>
-              <p className="mt-1">Wait at least six clean months. Early requests on thin files usually deny and waste hard pulls better saved for graduation products.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Will requesting hurt my score?</summary>
+              <p className="mt-2">Soft-pull reviews cost nothing. Hard-pull requests cost a few points for about a year — ask the issuer which applies first.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How much should I request?</summary>
+              <p className="mt-2">A moderate step — roughly 1.5 to 2 times the current limit — supported by income. Extreme requests invite denial or counteroffers.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do automatic increases count?</summary>
+              <p className="mt-2">Yes, identically. System-initiated increases carry the same utilization benefit with no request needed. Keep usage exemplary to trigger them.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should new borrowers request early?</summary>
+              <p className="mt-2">Wait at least six clean months. Early requests on thin files usually deny and waste hard pulls better saved for graduation products.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

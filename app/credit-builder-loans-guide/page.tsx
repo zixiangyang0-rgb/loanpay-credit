@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Credit Builder Loans Guide: Costs, Reporting & Alternatives | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function BuilderLoansPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Credit Builder Loans Guide: Costs, Reporting & Alternatives | LoanPay Credit" description="How credit-builder loans work — locked savings, fees, reporting — with cost examples, comparison tables, and who should use one." slug="/credit-builder-loans-guide" />
+      <FaqJsonLd items={[{"q":"Do I get the money upfront?","a":"No. Funds lock until you complete payments, then release minus fees. That inversion is what makes approval easy."},{"q":"Builder loan or secured card?","a":"Secured card first for most builders. Add a builder loan for installment mix once the card runs cleanly."},{"q":"Can I pay off early?","a":"Often yes, but early completion shortens the payment streak the file observes. Check refund and reporting terms first."},{"q":"What if I miss a payment?","a":"It reports like any late payment and can drop scores sharply. Keep a two-payment buffer and dual autopay reminders."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Building &middot; Installment tradelines
@@ -23,8 +27,12 @@ export default function BuilderLoansPage() {
           build an installment tradeline meanwhile. Learn the true costs, the reporting mechanics,
           and when a secured card serves better.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -136,27 +144,31 @@ export default function BuilderLoansPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do I get the money upfront?</h3>
-              <p className="mt-1">No. Funds lock until you complete payments, then release minus fees. That inversion is what makes approval easy.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Builder loan or secured card?</h3>
-              <p className="mt-1">Secured card first for most builders. Add a builder loan for installment mix once the card runs cleanly.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I pay off early?</h3>
-              <p className="mt-1">Often yes, but early completion shortens the payment streak the file observes. Check refund and reporting terms first.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What if I miss a payment?</h3>
-              <p className="mt-1">It reports like any late payment and can drop scores sharply. Keep a two-payment buffer and dual autopay reminders.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do I get the money upfront?</summary>
+              <p className="mt-2">No. Funds lock until you complete payments, then release minus fees. That inversion is what makes approval easy.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Builder loan or secured card?</summary>
+              <p className="mt-2">Secured card first for most builders. Add a builder loan for installment mix once the card runs cleanly.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I pay off early?</summary>
+              <p className="mt-2">Often yes, but early completion shortens the payment streak the file observes. Check refund and reporting terms first.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What if I miss a payment?</summary>
+              <p className="mt-2">It reports like any late payment and can drop scores sharply. Keep a two-payment buffer and dual autopay reminders.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

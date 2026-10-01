@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Authorized User Guide: Benefits, Risks & Removal | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function AuthorizedUserPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Authorized User Guide: Benefits, Risks & Removal | LoanPay Credit" description="How becoming an authorized user builds credit — piggybacking rules, risks for both sides, and how to leave — with examples and FAQs." slug="/authorized-user-guide" />
+      <FaqJsonLd items={[{"q":"Am I liable for the balance?","a":"Generally no. The primary holder owes the debt. Some issuers allow shared-liability variants, so confirm terms in writing."},{"q":"Can removal hurt me?","a":"Yes, if the tradeline was your oldest or largest limit. Build primary history alongside so departure causes only a mild dip."},{"q":"Do all issuers report authorized users?","a":"No. Most major consumer issuers do, but bureau coverage varies. Confirm reporting to all three bureaus before relying on it."},{"q":"How fast does it appear?","a":"Usually one to two statement cycles after addition, depending on issuer reporting dates and bureau processing."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Building &middot; Tradelines
@@ -23,8 +27,12 @@ export default function AuthorizedUserPage() {
           import their missed payments just as fast. Learn the rules, the risks for both sides,
           and the exit path before sharing any account.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -141,27 +149,31 @@ export default function AuthorizedUserPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Am I liable for the balance?</h3>
-              <p className="mt-1">Generally no. The primary holder owes the debt. Some issuers allow shared-liability variants, so confirm terms in writing.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can removal hurt me?</h3>
-              <p className="mt-1">Yes, if the tradeline was your oldest or largest limit. Build primary history alongside so departure causes only a mild dip.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do all issuers report authorized users?</h3>
-              <p className="mt-1">No. Most major consumer issuers do, but bureau coverage varies. Confirm reporting to all three bureaus before relying on it.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How fast does it appear?</h3>
-              <p className="mt-1">Usually one to two statement cycles after addition, depending on issuer reporting dates and bureau processing.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Am I liable for the balance?</summary>
+              <p className="mt-2">Generally no. The primary holder owes the debt. Some issuers allow shared-liability variants, so confirm terms in writing.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can removal hurt me?</summary>
+              <p className="mt-2">Yes, if the tradeline was your oldest or largest limit. Build primary history alongside so departure causes only a mild dip.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do all issuers report authorized users?</summary>
+              <p className="mt-2">No. Most major consumer issuers do, but bureau coverage varies. Confirm reporting to all three bureaus before relying on it.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How fast does it appear?</summary>
+              <p className="mt-2">Usually one to two statement cycles after addition, depending on issuer reporting dates and bureau processing.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

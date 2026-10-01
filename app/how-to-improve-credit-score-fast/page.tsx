@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "How to Improve Your Credit Score Fast: 30/60/90-Day Plan | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function ImproveScoreFastPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="How to Improve Your Credit Score Fast: 30/60/90-Day Plan | LoanPay Credit" description="Realistic ways to raise your credit score in 30, 60, and 90 days — utilization timing, autopay, error disputes — plus what cannot change overnight." slug="/how-to-improve-credit-score-fast" />
+      <FaqJsonLd items={[{"q":"Can my score rise 100 points in 30 days?","a":"Rarely and only from narrow cases like a large error deletion or a huge utilization swing. Typical honest 30-day moves are 10 to 40 points."},{"q":"Should I pay everything before applying?","a":"Pay revolving balances before statement dates so low utilization reports, but keep installment loans on schedule rather than draining emergency savings."},{"q":"Do credit repair companies work faster?","a":"They use the same free dispute rights you have. No company can legally remove accurate negative information or guarantee point gains."},{"q":"Will checking progress daily hurt?","a":"No. Personal monitoring is a soft inquiry with zero impact. Check weekly during a sprint; scores often refresh monthly with bureau updates."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Scores &middot; Action plan
@@ -23,8 +27,12 @@ export default function ImproveScoreFastPage() {
           utilization timing, clean payments, and error cleanup can move many files 30 to 80
           points. Here is the honest sequence, with timelines.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -182,27 +190,31 @@ export default function ImproveScoreFastPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can my score rise 100 points in 30 days?</h3>
-              <p className="mt-1">Rarely and only from narrow cases like a large error deletion or a huge utilization swing. Typical honest 30-day moves are 10 to 40 points.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should I pay everything before applying?</h3>
-              <p className="mt-1">Pay revolving balances before statement dates so low utilization reports, but keep installment loans on schedule rather than draining emergency savings.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do credit repair companies work faster?</h3>
-              <p className="mt-1">They use the same free dispute rights you have. No company can legally remove accurate negative information or guarantee point gains.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Will checking progress daily hurt?</h3>
-              <p className="mt-1">No. Personal monitoring is a soft inquiry with zero impact. Check weekly during a sprint; scores often refresh monthly with bureau updates.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can my score rise 100 points in 30 days?</summary>
+              <p className="mt-2">Rarely and only from narrow cases like a large error deletion or a huge utilization swing. Typical honest 30-day moves are 10 to 40 points.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should I pay everything before applying?</summary>
+              <p className="mt-2">Pay revolving balances before statement dates so low utilization reports, but keep installment loans on schedule rather than draining emergency savings.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do credit repair companies work faster?</summary>
+              <p className="mt-2">They use the same free dispute rights you have. No company can legally remove accurate negative information or guarantee point gains.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Will checking progress daily hurt?</summary>
+              <p className="mt-2">No. Personal monitoring is a soft inquiry with zero impact. Check weekly during a sprint; scores often refresh monthly with bureau updates.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

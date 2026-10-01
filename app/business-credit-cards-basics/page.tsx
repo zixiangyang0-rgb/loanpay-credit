@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Business Credit Cards Basics: EIN, Reporting & Liability | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function BusinessCardsPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Business Credit Cards Basics: EIN, Reporting & Liability | LoanPay Credit" description="Business credit cards explained — EIN vs. SSN applications, personal guarantees, bureau reporting quirks, and separating business spend — with examples." slug="/business-credit-cards-basics" />
+      <FaqJsonLd items={[{"q":"Can freelancers get business cards?","a":"Yes. Sole proprietors with any self-employment income generally qualify using their SSN, with honest revenue estimates."},{"q":"Do balances affect personal utilization?","a":"Usually not while current, at most issuers — but delinquencies cross over. Verify the issuer policy since exceptions exist."},{"q":"Are rewards taxable?","a":"Rebates on spending are generally treated as discounts, not income, but business-specific situations vary. Confirm with a tax professional."},{"q":"Should startups get the premium card?","a":"Rarely at first. Match the fee to proven spend; upgrade once a year of statements shows the break-even clearly."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Cards &middot; Business
@@ -23,8 +27,12 @@ export default function BusinessCardsPage() {
           personal reports &mdash; but the personal guarantee means your own file still rides
           along. Learn the application, reporting, and liability mechanics.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -137,27 +145,31 @@ export default function BusinessCardsPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can freelancers get business cards?</h3>
-              <p className="mt-1">Yes. Sole proprietors with any self-employment income generally qualify using their SSN, with honest revenue estimates.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do balances affect personal utilization?</h3>
-              <p className="mt-1">Usually not while current, at most issuers — but delinquencies cross over. Verify the issuer policy since exceptions exist.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Are rewards taxable?</h3>
-              <p className="mt-1">Rebates on spending are generally treated as discounts, not income, but business-specific situations vary. Confirm with a tax professional.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should startups get the premium card?</h3>
-              <p className="mt-1">Rarely at first. Match the fee to proven spend; upgrade once a year of statements shows the break-even clearly.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can freelancers get business cards?</summary>
+              <p className="mt-2">Yes. Sole proprietors with any self-employment income generally qualify using their SSN, with honest revenue estimates.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do balances affect personal utilization?</summary>
+              <p className="mt-2">Usually not while current, at most issuers — but delinquencies cross over. Verify the issuer policy since exceptions exist.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Are rewards taxable?</summary>
+              <p className="mt-2">Rebates on spending are generally treated as discounts, not income, but business-specific situations vary. Confirm with a tax professional.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should startups get the premium card?</summary>
+              <p className="mt-2">Rarely at first. Match the fee to proven spend; upgrade once a year of statements shows the break-even clearly.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

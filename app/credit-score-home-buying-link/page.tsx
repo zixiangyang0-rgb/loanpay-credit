@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Credit Scores & Home Buying: Thresholds, Rates & Prep | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function ScoreHomeBuyingPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Credit Scores & Home Buying: Thresholds, Rates & Prep | LoanPay Credit" description="How credit scores shape mortgage approval, rate tiers, and costs — score thresholds, preparation timelines, and a worked rate example." slug="/credit-score-home-buying-link" />
+      <FaqJsonLd items={[{"q":"What score buys a house?","a":"Conventional approval often starts at 620, FHA at 580 with 3.5% down. Better tiers — 700, 740, 760 — cut rates meaningfully."},{"q":"Which score do lenders use?","a":"Usually the middle of three FICO mortgage scores — older versions that can read 20+ points below your FICO 8."},{"q":"Should I close cards before applying?","a":"No. Keep no-fee cards open; closing cuts limits and raises utilization right when pricing is tightest."},{"q":"Can I get approved with collections?","a":"Sometimes, depending on program and amount — but many lenders require resolution first. Start the process 6+ months early."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Scores &middot; Home buying
@@ -23,8 +27,12 @@ export default function ScoreHomeBuyingPage() {
           any other creditor. Learn the approval thresholds, the rate tiers where points turn
           into dollars, and the preparation timeline that buys the cheapest money.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -147,27 +155,31 @@ export default function ScoreHomeBuyingPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What score buys a house?</h3>
-              <p className="mt-1">Conventional approval often starts at 620, FHA at 580 with 3.5% down. Better tiers — 700, 740, 760 — cut rates meaningfully.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Which score do lenders use?</h3>
-              <p className="mt-1">Usually the middle of three FICO mortgage scores — older versions that can read 20+ points below your FICO 8.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should I close cards before applying?</h3>
-              <p className="mt-1">No. Keep no-fee cards open; closing cuts limits and raises utilization right when pricing is tightest.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I get approved with collections?</h3>
-              <p className="mt-1">Sometimes, depending on program and amount — but many lenders require resolution first. Start the process 6+ months early.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What score buys a house?</summary>
+              <p className="mt-2">Conventional approval often starts at 620, FHA at 580 with 3.5% down. Better tiers — 700, 740, 760 — cut rates meaningfully.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Which score do lenders use?</summary>
+              <p className="mt-2">Usually the middle of three FICO mortgage scores — older versions that can read 20+ points below your FICO 8.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should I close cards before applying?</summary>
+              <p className="mt-2">No. Keep no-fee cards open; closing cuts limits and raises utilization right when pricing is tightest.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I get approved with collections?</summary>
+              <p className="mt-2">Sometimes, depending on program and amount — but many lenders require resolution first. Start the process 6+ months early.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Collections Debt & Your Credit Report: Rights & Recovery | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function CollectionsPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Collections Debt & Your Credit Report: Rights & Recovery | LoanPay Credit" description="How collections affect your score — validation rights, medical-debt rules, pay-for-delete reality, and recovery steps — with tables and FAQs." slug="/collections-debt-credit-report" />
+      <FaqJsonLd items={[{"q":"Should I pay a collection?","a":"Validate first, then usually yes for in-limitations debts — paid status helps newer scores and is often required for mortgages. Get deletion or reporting terms in writing."},{"q":"Does pay-for-delete always work?","a":"No. It is voluntary and some collectors refuse as policy. Written agreement before payment is essential; verbal promises are worthless."},{"q":"How long do collections stay?","a":"Generally seven years from the original delinquency date, regardless of sale or payment. The clock does not restart on resale."},{"q":"Can collectors sue?","a":"Within the state limitations period, yes. Time-barred debts have different rules — consult a local attorney before acknowledging old debts."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Reports &middot; Collections
@@ -23,8 +27,12 @@ export default function CollectionsPage() {
           reforms, and scoring improvements on your side. Learn the response order that protects
           both wallet and file.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -152,27 +160,31 @@ export default function CollectionsPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should I pay a collection?</h3>
-              <p className="mt-1">Validate first, then usually yes for in-limitations debts — paid status helps newer scores and is often required for mortgages. Get deletion or reporting terms in writing.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does pay-for-delete always work?</h3>
-              <p className="mt-1">No. It is voluntary and some collectors refuse as policy. Written agreement before payment is essential; verbal promises are worthless.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How long do collections stay?</h3>
-              <p className="mt-1">Generally seven years from the original delinquency date, regardless of sale or payment. The clock does not restart on resale.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can collectors sue?</h3>
-              <p className="mt-1">Within the state limitations period, yes. Time-barred debts have different rules — consult a local attorney before acknowledging old debts.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should I pay a collection?</summary>
+              <p className="mt-2">Validate first, then usually yes for in-limitations debts — paid status helps newer scores and is often required for mortgages. Get deletion or reporting terms in writing.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does pay-for-delete always work?</summary>
+              <p className="mt-2">No. It is voluntary and some collectors refuse as policy. Written agreement before payment is essential; verbal promises are worthless.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How long do collections stay?</summary>
+              <p className="mt-2">Generally seven years from the original delinquency date, regardless of sale or payment. The clock does not restart on resale.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can collectors sue?</summary>
+              <p className="mt-2">Within the state limitations period, yes. Time-barred debts have different rules — consult a local attorney before acknowledging old debts.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

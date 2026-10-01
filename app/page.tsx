@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "./components/AdSlot";
 
 export const metadata: Metadata = {
   title: "LoanPay Credit | Credit Scores, Cards & Reports Explained",
@@ -221,6 +222,10 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-home-top" label="Homepage top" />
+      </div>
 
       {clusters.map((cluster) => (
         <section key={cluster.id} className="mt-12">

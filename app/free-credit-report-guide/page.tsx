@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Free Credit Report Guide: Weekly Reports & Reading Checklist | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function FreeReportGuidePage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Free Credit Report Guide: Weekly Reports & Reading Checklist | LoanPay Credit" description="How to get free weekly credit reports from AnnualCreditReport.com, read each section, and spot errors — with a checklist table and worked review." slug="/free-credit-report-guide" />
+      <FaqJsonLd items={[{"q":"How often are reports free?","a":"Weekly from each bureau through AnnualCreditReport.com — the standing policy as of 2026."},{"q":"Does requesting hurt my score?","a":"Never. Your own requests are soft inquiries with zero scoring impact, no matter how often you check."},{"q":"Why do my three reports differ?","a":"Furnishers report on different schedules and some skip bureaus. Small balance and timing differences are normal; structural contradictions are not."},{"q":"Are free scores accurate?","a":"They are real scores from real models, often VantageScore. Lenders may pull different FICO versions, so use free scores for direction and reports for fixes."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Reports &middot; Free access
@@ -23,8 +27,12 @@ export default function FreeReportGuidePage() {
           official portal. Learn the safe request path, the section-by-section reading method, and
           the error patterns worth disputing.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -147,27 +155,31 @@ export default function FreeReportGuidePage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How often are reports free?</h3>
-              <p className="mt-1">Weekly from each bureau through AnnualCreditReport.com — the standing policy as of 2026.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does requesting hurt my score?</h3>
-              <p className="mt-1">Never. Your own requests are soft inquiries with zero scoring impact, no matter how often you check.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Why do my three reports differ?</h3>
-              <p className="mt-1">Furnishers report on different schedules and some skip bureaus. Small balance and timing differences are normal; structural contradictions are not.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Are free scores accurate?</h3>
-              <p className="mt-1">They are real scores from real models, often VantageScore. Lenders may pull different FICO versions, so use free scores for direction and reports for fixes.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How often are reports free?</summary>
+              <p className="mt-2">Weekly from each bureau through AnnualCreditReport.com — the standing policy as of 2026.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does requesting hurt my score?</summary>
+              <p className="mt-2">Never. Your own requests are soft inquiries with zero scoring impact, no matter how often you check.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Why do my three reports differ?</summary>
+              <p className="mt-2">Furnishers report on different schedules and some skip bureaus. Small balance and timing differences are normal; structural contradictions are not.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Are free scores accurate?</summary>
+              <p className="mt-2">They are real scores from real models, often VantageScore. Lenders may pull different FICO versions, so use free scores for direction and reports for fixes.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

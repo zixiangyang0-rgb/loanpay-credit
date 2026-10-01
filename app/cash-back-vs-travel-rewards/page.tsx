@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Cash Back vs. Travel Rewards: Break-Even Examples | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function CashVsTravelPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Cash Back vs. Travel Rewards: Break-Even Examples | LoanPay Credit" description="Compare cash-back and travel-rewards card styles with break-even math, redemption examples, and fee analysis — comparison framing, no hype." slug="/cash-back-vs-travel-rewards" />
+      <FaqJsonLd items={[{"q":"Are points or cash better?","a":"Cash is predictable and flexible. Points can beat cash for deliberate travel redemptions but underperform badly when redeemed carelessly."},{"q":"How do I value a point?","a":"Divide the cash price of the identical trip by the points required. Your past redemptions, not bloggers averages, set your personal valuation."},{"q":"Do rewards expire?","a":"Cash rarely expires on open accounts. Points can expire with program inactivity or account closure; transfer-partner rules add another layer."},{"q":"Can rewards build credit?","a":"Only indirectly. Payment history and utilization build the score; rewards are a rebate on spending you would do anyway and pay in full."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Cards &middot; Rewards compared
@@ -23,8 +27,12 @@ export default function CashVsTravelPage() {
           fees, and effort levels. Compare flat cash, category bonuses, and points transfers with
           break-even examples before choosing.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -141,27 +149,31 @@ export default function CashVsTravelPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Are points or cash better?</h3>
-              <p className="mt-1">Cash is predictable and flexible. Points can beat cash for deliberate travel redemptions but underperform badly when redeemed carelessly.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How do I value a point?</h3>
-              <p className="mt-1">Divide the cash price of the identical trip by the points required. Your past redemptions, not bloggers averages, set your personal valuation.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do rewards expire?</h3>
-              <p className="mt-1">Cash rarely expires on open accounts. Points can expire with program inactivity or account closure; transfer-partner rules add another layer.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can rewards build credit?</h3>
-              <p className="mt-1">Only indirectly. Payment history and utilization build the score; rewards are a rebate on spending you would do anyway and pay in full.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Are points or cash better?</summary>
+              <p className="mt-2">Cash is predictable and flexible. Points can beat cash for deliberate travel redemptions but underperform badly when redeemed carelessly.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How do I value a point?</summary>
+              <p className="mt-2">Divide the cash price of the identical trip by the points required. Your past redemptions, not bloggers averages, set your personal valuation.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do rewards expire?</summary>
+              <p className="mt-2">Cash rarely expires on open accounts. Points can expire with program inactivity or account closure; transfer-partner rules add another layer.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can rewards build credit?</summary>
+              <p className="mt-2">Only indirectly. Payment history and utilization build the score; rewards are a rebate on spending you would do anyway and pay in full.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

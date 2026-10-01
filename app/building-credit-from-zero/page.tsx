@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Building Credit From Zero: 12-Month Starter Plan | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function BuildingFromZeroPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Building Credit From Zero: 12-Month Starter Plan | LoanPay Credit" description="A month-by-month plan to build credit from no score to 670+ — secured cards, builder loans, authorized users, monitoring — with timelines and FAQs." slug="/building-credit-from-zero" />
+      <FaqJsonLd items={[{"q":"How long until I have a score?","a":"About one month of reporting for VantageScore and about six months for a FICO score, assuming recent activity."},{"q":"Secured card or builder loan first?","a":"Secured card first for most people — revolving history is the versatile foundation. Add a builder loan later for mix."},{"q":"Will my deposit earn interest?","a":"Rarely. Treat the deposit as temporarily parked, refunded at graduation or careful closure with a zero balance."},{"q":"When can I rent or finance a car?","a":"Many landlords and auto lenders approve thin-but-clean files with income verification after 6–12 months. Bring pay stubs and bank records."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Building &middot; From scratch
@@ -23,8 +27,12 @@ export default function BuildingFromZeroPage() {
           month-by-month sequence from first tradeline to 670-plus, with costs, timelines, and the
           mistakes that waste a year.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -155,27 +163,31 @@ export default function BuildingFromZeroPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How long until I have a score?</h3>
-              <p className="mt-1">About one month of reporting for VantageScore and about six months for a FICO score, assuming recent activity.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Secured card or builder loan first?</h3>
-              <p className="mt-1">Secured card first for most people — revolving history is the versatile foundation. Add a builder loan later for mix.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Will my deposit earn interest?</h3>
-              <p className="mt-1">Rarely. Treat the deposit as temporarily parked, refunded at graduation or careful closure with a zero balance.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">When can I rent or finance a car?</h3>
-              <p className="mt-1">Many landlords and auto lenders approve thin-but-clean files with income verification after 6&ndash;12 months. Bring pay stubs and bank records.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How long until I have a score?</summary>
+              <p className="mt-2">About one month of reporting for VantageScore and about six months for a FICO score, assuming recent activity.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Secured card or builder loan first?</summary>
+              <p className="mt-2">Secured card first for most people — revolving history is the versatile foundation. Add a builder loan later for mix.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Will my deposit earn interest?</summary>
+              <p className="mt-2">Rarely. Treat the deposit as temporarily parked, refunded at graduation or careful closure with a zero balance.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">When can I rent or finance a car?</summary>
+              <p className="mt-2">Many landlords and auto lenders approve thin-but-clean files with income verification after 6&ndash;12 months. Bring pay stubs and bank records.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "How Credit Scores Are Calculated: FICO Weights Explained | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function HowScoresCalculatedPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="How Credit Scores Are Calculated: FICO Weights Explained | LoanPay Credit" description="FICO weights — payment history 35%, amounts owed 30%, length 15%, new credit 10%, mix 10% — explained with tables, a worked example, and FAQs." slug="/how-credit-scores-calculated" />
+      <FaqJsonLd items={[{"q":"Which factor matters most?","a":"Payment history at about 35%, followed by amounts owed at about 30%. Together they drive roughly two-thirds of a FICO score."},{"q":"Does income affect my score?","a":"No. Income, savings, employment, age, and marital status are not scoring inputs. Lenders consider income separately in approvals."},{"q":"Is FICO 10T different?","a":"FICO 10T adds 24-month trended data, rewarding falling balances and flagging rising ones. Adoption varies by lender; FICO 8 remains the most common baseline."},{"q":"Can a thin file still score well?","a":"Yes. A single card paid on time with low utilization can reach the good band within a year or two, though depth limits how high it climbs initially."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Scores &middot; Scoring math
@@ -22,8 +26,12 @@ export default function HowScoresCalculatedPage() {
           FICO reads your bureau file through five weighted lenses. Understand each weight, what
           feeds it, and which levers actually move your number &mdash; with a full worked example.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -178,27 +186,31 @@ export default function HowScoresCalculatedPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Which factor matters most?</h3>
-              <p className="mt-1">Payment history at about 35%, followed by amounts owed at about 30%. Together they drive roughly two-thirds of a FICO score.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does income affect my score?</h3>
-              <p className="mt-1">No. Income, savings, employment, age, and marital status are not scoring inputs. Lenders consider income separately in approvals.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Is FICO 10T different?</h3>
-              <p className="mt-1">FICO 10T adds 24-month trended data, rewarding falling balances and flagging rising ones. Adoption varies by lender; FICO 8 remains the most common baseline.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can a thin file still score well?</h3>
-              <p className="mt-1">Yes. A single card paid on time with low utilization can reach the good band within a year or two, though depth limits how high it climbs initially.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Which factor matters most?</summary>
+              <p className="mt-2">Payment history at about 35%, followed by amounts owed at about 30%. Together they drive roughly two-thirds of a FICO score.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does income affect my score?</summary>
+              <p className="mt-2">No. Income, savings, employment, age, and marital status are not scoring inputs. Lenders consider income separately in approvals.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Is FICO 10T different?</summary>
+              <p className="mt-2">FICO 10T adds 24-month trended data, rewarding falling balances and flagging rising ones. Adoption varies by lender; FICO 8 remains the most common baseline.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can a thin file still score well?</summary>
+              <p className="mt-2">Yes. A single card paid on time with low utilization can reach the good band within a year or two, though depth limits how high it climbs initially.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

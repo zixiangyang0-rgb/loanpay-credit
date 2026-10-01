@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "How Often Does Your Credit Score Update? Refresh Cycles | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function ScoreUpdatesPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="How Often Does Your Credit Score Update? Refresh Cycles | LoanPay Credit" description="Credit score refresh cycles — statement dates, bureau reporting lags, monitoring delays — plus when to check and a worked timeline." slug="/how-often-credit-score-updates" />
+      <FaqJsonLd items={[{"q":"Do scores update daily?","a":"No. Underlying files update when furnishers report monthly; apps refresh snapshots weekly to monthly. Daily changes are display noise."},{"q":"What is rapid rescoring?","a":"A lender-initiated rush updating bureau files in days with documented proof, used during mortgage underwriting. Consumers cannot order it directly."},{"q":"Why did my score drop after paying off a loan?","a":"Closed installment accounts can trim mix and age signals temporarily. The dip is usually small and recovers within months."},{"q":"Which bureau updates first?","a":"Whichever the issuer transmits to first on its batch schedule. Issuers report on independent timelines per bureau."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Scores &middot; Refresh cycles
@@ -23,8 +27,12 @@ export default function ScoreUpdatesPage() {
           monthly, never instantly. Learn the four-stage pipeline, realistic timelines, and the
           checking cadence that keeps you informed without obsession.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -142,27 +150,31 @@ export default function ScoreUpdatesPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do scores update daily?</h3>
-              <p className="mt-1">No. Underlying files update when furnishers report monthly; apps refresh snapshots weekly to monthly. Daily changes are display noise.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is rapid rescoring?</h3>
-              <p className="mt-1">A lender-initiated rush updating bureau files in days with documented proof, used during mortgage underwriting. Consumers cannot order it directly.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Why did my score drop after paying off a loan?</h3>
-              <p className="mt-1">Closed installment accounts can trim mix and age signals temporarily. The dip is usually small and recovers within months.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Which bureau updates first?</h3>
-              <p className="mt-1">Whichever the issuer transmits to first on its batch schedule. Issuers report on independent timelines per bureau.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do scores update daily?</summary>
+              <p className="mt-2">No. Underlying files update when furnishers report monthly; apps refresh snapshots weekly to monthly. Daily changes are display noise.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is rapid rescoring?</summary>
+              <p className="mt-2">A lender-initiated rush updating bureau files in days with documented proof, used during mortgage underwriting. Consumers cannot order it directly.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Why did my score drop after paying off a loan?</summary>
+              <p className="mt-2">Closed installment accounts can trim mix and age signals temporarily. The dip is usually small and recovers within months.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Which bureau updates first?</summary>
+              <p className="mt-2">Whichever the issuer transmits to first on its batch schedule. Issuers report on independent timelines per bureau.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
+import ConsentBanner from "./components/consent";
+import { SiteOrgJsonLd } from "./components/schema";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -83,12 +85,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <SiteOrgJsonLd />
         <Header />
         <main>{children}</main>
         <Footer />
+        <ConsentBanner />
+        {/* Google Funding Choices CMP for credit.loanpaylogic.com:
+            https://fundingchoicesmessages.google.com/ — paste the Funding Choices
+            CMP snippet here after setup. ConsentBanner above stores
+            credit-consent (accepted/npa/rejected); AdSlot honors npa. */}
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4906207495792820"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           crossOrigin="anonymous"
         />
       </body>

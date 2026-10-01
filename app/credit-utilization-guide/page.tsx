@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Credit Utilization Guide: 30% Rule & Statement Timing | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function UtilizationGuidePage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Credit Utilization Guide: 30% Rule & Statement Timing | LoanPay Credit" description="How credit utilization is calculated per card and overall, why the 30% guideline exists, statement-date timing tricks, and a worked paydown example." slug="/credit-utilization-guide" />
+      <FaqJsonLd items={[{"q":"Is 0% utilization ideal?","a":"Not necessarily. Files reporting 1–9% sometimes outscore all-zero files. Keep one small balance reporting, then pay in full."},{"q":"Does utilization history matter?","a":"In FICO 8 and most current models, no — only the latest snapshot counts. FICO 10T adds trended data at adopting lenders."},{"q":"Do installment balances count?","a":"Separately, as balance versus original loan amount. Paying an auto loan from 90% to 40% remaining can help modestly."},{"q":"How fast do paydowns report?","a":"Usually one to two statement cycles after the lower snapshot, since issuers report monthly on their own schedules."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Cards &middot; Utilization
@@ -23,8 +27,12 @@ export default function UtilizationGuidePage() {
           Learn the per-card and overall math, the timing quirk that fools full-balance payers,
           and the paydown order that reports fastest.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -152,27 +160,31 @@ export default function UtilizationGuidePage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Is 0% utilization ideal?</h3>
-              <p className="mt-1">Not necessarily. Files reporting 1&ndash;9% sometimes outscore all-zero files. Keep one small balance reporting, then pay in full.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does utilization history matter?</h3>
-              <p className="mt-1">In FICO 8 and most current models, no &mdash; only the latest snapshot counts. FICO 10T adds trended data at adopting lenders.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do installment balances count?</h3>
-              <p className="mt-1">Separately, as balance versus original loan amount. Paying an auto loan from 90% to 40% remaining can help modestly.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How fast do paydowns report?</h3>
-              <p className="mt-1">Usually one to two statement cycles after the lower snapshot, since issuers report monthly on their own schedules.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Is 0% utilization ideal?</summary>
+              <p className="mt-2">Not necessarily. Files reporting 1&ndash;9% sometimes outscore all-zero files. Keep one small balance reporting, then pay in full.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does utilization history matter?</summary>
+              <p className="mt-2">In FICO 8 and most current models, no &mdash; only the latest snapshot counts. FICO 10T adds trended data at adopting lenders.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do installment balances count?</summary>
+              <p className="mt-2">Separately, as balance versus original loan amount. Paying an auto loan from 90% to 40% remaining can help modestly.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How fast do paydowns report?</summary>
+              <p className="mt-2">Usually one to two statement cycles after the lower snapshot, since issuers report monthly on their own schedules.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Missed Payment Credit Impact: 30/60/90-Day Damage & Recovery | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function MissedPaymentPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Missed Payment Credit Impact: 30/60/90-Day Damage & Recovery | LoanPay Credit" description="How late payments hit your score at 30, 60, and 90+ days, how long damage lasts, goodwill letters, and a recovery timeline with examples." slug="/missed-payment-credit-impact" />
+      <FaqJsonLd items={[{"q":"How long do late payments stay?","a":"Generally seven years from the delinquency date. Impact fades with clean time; a two-year-old 30-day mark weighs far less than a fresh one."},{"q":"Does paying remove the mark?","a":"No. Paying stops further damage but the history remains. Removal requires goodwill approval or proof of inaccuracy."},{"q":"Can lenders see past old marks?","a":"Manual reviewers see the full seven-year history. A letter explaining an isolated old mark plus recent clean statements satisfies many."},{"q":"Do partial payments count as late?","a":"Payments below the minimum due can still report late. Always cover at least the minimum by the due date; pay extra separately."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Reports &middot; Damage control
@@ -23,8 +27,12 @@ export default function MissedPaymentPage() {
           it faster than the clean streak afterward. Learn the 30-day reporting line, severity
           scaling, and the recovery timeline.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -136,27 +144,31 @@ export default function MissedPaymentPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How long do late payments stay?</h3>
-              <p className="mt-1">Generally seven years from the delinquency date. Impact fades with clean time; a two-year-old 30-day mark weighs far less than a fresh one.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does paying remove the mark?</h3>
-              <p className="mt-1">No. Paying stops further damage but the history remains. Removal requires goodwill approval or proof of inaccuracy.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can lenders see past old marks?</h3>
-              <p className="mt-1">Manual reviewers see the full seven-year history. A letter explaining an isolated old mark plus recent clean statements satisfies many.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do partial payments count as late?</h3>
-              <p className="mt-1">Payments below the minimum due can still report late. Always cover at least the minimum by the due date; pay extra separately.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How long do late payments stay?</summary>
+              <p className="mt-2">Generally seven years from the delinquency date. Impact fades with clean time; a two-year-old 30-day mark weighs far less than a fresh one.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does paying remove the mark?</summary>
+              <p className="mt-2">No. Paying stops further damage but the history remains. Removal requires goodwill approval or proof of inaccuracy.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can lenders see past old marks?</summary>
+              <p className="mt-2">Manual reviewers see the full seven-year history. A letter explaining an isolated old mark plus recent clean statements satisfies many.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do partial payments count as late?</summary>
+              <p className="mt-2">Payments below the minimum due can still report late. Always cover at least the minimum by the due date; pay extra separately.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

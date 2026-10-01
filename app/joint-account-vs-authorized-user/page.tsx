@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Joint Account vs. Authorized User: Liability & Reporting | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function JointVsAuthPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Joint Account vs. Authorized User: Liability & Reporting | LoanPay Credit" description="Joint accounts versus authorized-user status compared — ownership, liability, divorce effects, reporting — with tables, examples, and FAQs." slug="/joint-account-vs-authorized-user" />
+      <FaqJsonLd items={[{"q":"Can one person close a joint account?","a":"Generally the balance must reach zero first, and most issuers require both holders to consent. Freeze charging immediately during disputes."},{"q":"Does divorce end joint liability?","a":"No. Only payoff, refinancing into one name, or creditor-approved release ends it. Court orders direct spouses, not banks."},{"q":"Which helps scores more?","a":"Joint history carries full primary weight in models, but authorized history with zero liability risk usually wins on risk-adjusted value."},{"q":"Can I remove an authorized user instantly?","a":"Removal requests process quickly through the issuer, with bureau clearing in one to two cycles. Either party may initiate."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Building &middot; Shared accounts
@@ -23,8 +27,12 @@ export default function JointVsAuthPage() {
           mechanics differ completely. Compare the structures side by side before merging any
           credit life.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -142,27 +150,31 @@ export default function JointVsAuthPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can one person close a joint account?</h3>
-              <p className="mt-1">Generally the balance must reach zero first, and most issuers require both holders to consent. Freeze charging immediately during disputes.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does divorce end joint liability?</h3>
-              <p className="mt-1">No. Only payoff, refinancing into one name, or creditor-approved release ends it. Court orders direct spouses, not banks.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Which helps scores more?</h3>
-              <p className="mt-1">Joint history carries full primary weight in models, but authorized history with zero liability risk usually wins on risk-adjusted value.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I remove an authorized user instantly?</h3>
-              <p className="mt-1">Removal requests process quickly through the issuer, with bureau clearing in one to two cycles. Either party may initiate.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can one person close a joint account?</summary>
+              <p className="mt-2">Generally the balance must reach zero first, and most issuers require both holders to consent. Freeze charging immediately during disputes.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does divorce end joint liability?</summary>
+              <p className="mt-2">No. Only payoff, refinancing into one name, or creditor-approved release ends it. Court orders direct spouses, not banks.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Which helps scores more?</summary>
+              <p className="mt-2">Joint history carries full primary weight in models, but authorized history with zero liability risk usually wins on risk-adjusted value.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I remove an authorized user instantly?</summary>
+              <p className="mt-2">Removal requests process quickly through the issuer, with bureau clearing in one to two cycles. Either party may initiate.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

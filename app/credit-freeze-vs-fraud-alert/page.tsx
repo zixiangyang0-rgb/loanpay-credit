@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Credit Freeze vs. Fraud Alert: Which Protection Fits? | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function FreezeVsAlertPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Credit Freeze vs. Fraud Alert: Which Protection Fits? | LoanPay Credit" description="Compare credit freezes and fraud alerts — duration, cost, setup, and when to use each — with a side-by-side table and worked scenarios." slug="/credit-freeze-vs-fraud-alert" />
+      <FaqJsonLd items={[{"q":"Does freezing hurt my score?","a":"No. Freezes and alerts change file access, not file contents, so scoring is unaffected."},{"q":"Can I have both at once?","a":"Yes, and confirmed victims should. The freeze blocks pulls; the alert adds verification where pulls still occur."},{"q":"How fast do lifts work?","a":"Often within an hour online, but plan a full day before applications in case of credential or caching delays."},{"q":"Should children be frozen?","a":"Parents can generally freeze a child file where one exists. A file existing for a young child warrants scrutiny for misuse."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Reports &middot; Protection
@@ -23,8 +27,12 @@ export default function FreezeVsAlertPage() {
           freeze locks the file; an alert flags it. Compare duration, setup, and daily impact, then
           pick the right shield for your situation.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -141,27 +149,31 @@ export default function FreezeVsAlertPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Does freezing hurt my score?</h3>
-              <p className="mt-1">No. Freezes and alerts change file access, not file contents, so scoring is unaffected.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I have both at once?</h3>
-              <p className="mt-1">Yes, and confirmed victims should. The freeze blocks pulls; the alert adds verification where pulls still occur.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How fast do lifts work?</h3>
-              <p className="mt-1">Often within an hour online, but plan a full day before applications in case of credential or caching delays.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should children be frozen?</h3>
-              <p className="mt-1">Parents can generally freeze a child file where one exists. A file existing for a young child warrants scrutiny for misuse.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Does freezing hurt my score?</summary>
+              <p className="mt-2">No. Freezes and alerts change file access, not file contents, so scoring is unaffected.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I have both at once?</summary>
+              <p className="mt-2">Yes, and confirmed victims should. The freeze blocks pulls; the alert adds verification where pulls still occur.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How fast do lifts work?</summary>
+              <p className="mt-2">Often within an hour online, but plan a full day before applications in case of credential or caching delays.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should children be frozen?</summary>
+              <p className="mt-2">Parents can generally freeze a child file where one exists. A file existing for a young child warrants scrutiny for misuse.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

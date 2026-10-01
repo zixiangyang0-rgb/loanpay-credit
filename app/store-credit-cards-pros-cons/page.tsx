@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "Store Credit Cards: Honest Pros & Cons With APR Math | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function StoreCardsPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="Store Credit Cards: Honest Pros & Cons With APR Math | LoanPay Credit" description="Store and retail cards compared — signup discounts, rewards limits, 25–33% APRs, closed-loop limits — with break-even examples and FAQs." slug="/store-credit-cards-pros-cons" />
+      <FaqJsonLd items={[{"q":"Do store cards build credit?","a":"Yes, equally. They report balances, limits, and payment history to bureaus like any revolving account."},{"q":"What is deferred interest?","a":"A promotion charging zero if fully paid by a deadline but retroactively adding all-period interest if any balance remains. True 0% offers instead waive interest unconditionally."},{"q":"Should I close unused store cards?","a":"Usually keep no-fee ones open for age and utilization cushion. Close only fee cards you cannot downgrade or accounts tempting overspending."},{"q":"Can I negotiate the APR?","a":"Occasionally with strong history, but retail APRs rarely fall far. Paying in full beats negotiating by orders of magnitude."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Cards &middot; Retail compared
@@ -23,8 +27,12 @@ export default function StoreCardsPage() {
           closed-loop and co-branded retail cards on rewards, limits, and costs with break-even
           math before saying yes at the register.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -141,27 +149,31 @@ export default function StoreCardsPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do store cards build credit?</h3>
-              <p className="mt-1">Yes, equally. They report balances, limits, and payment history to bureaus like any revolving account.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is deferred interest?</h3>
-              <p className="mt-1">A promotion charging zero if fully paid by a deadline but retroactively adding all-period interest if any balance remains. True 0% offers instead waive interest unconditionally.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should I close unused store cards?</h3>
-              <p className="mt-1">Usually keep no-fee ones open for age and utilization cushion. Close only fee cards you cannot downgrade or accounts tempting overspending.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I negotiate the APR?</h3>
-              <p className="mt-1">Occasionally with strong history, but retail APRs rarely fall far. Paying in full beats negotiating by orders of magnitude.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do store cards build credit?</summary>
+              <p className="mt-2">Yes, equally. They report balances, limits, and payment history to bureaus like any revolving account.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is deferred interest?</summary>
+              <p className="mt-2">A promotion charging zero if fully paid by a deadline but retroactively adding all-period interest if any balance remains. True 0% offers instead waive interest unconditionally.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should I close unused store cards?</summary>
+              <p className="mt-2">Usually keep no-fee ones open for age and utilization cushion. Close only fee cards you cannot downgrade or accounts tempting overspending.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I negotiate the APR?</summary>
+              <p className="mt-2">Occasionally with strong history, but retail APRs rarely fall far. Paying in full beats negotiating by orders of magnitude.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

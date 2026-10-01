@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "FICO vs. VantageScore: Models, Tiers & Lender Use Compared | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function FicoVsVantagePage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="FICO vs. VantageScore: Models, Tiers & Lender Use Compared | LoanPay Credit" description="FICO versus VantageScore — same 300–850 scale, different tiers, weights, versions, and lender adoption — compared with tables and examples." slug="/fico-vs-vantagescore" />
+      <FaqJsonLd items={[{"q":"Why do my scores differ?","a":"Different weights, tier definitions, and bureau files. Gaps of 20–40 points on the same file are normal."},{"q":"Which matters more to lenders?","a":"FICO in most mortgage, auto, and card decisions — roughly 90% of top-lender use. VantageScore adoption grows in cards and personal loans."},{"q":"What is FICO 10T?","a":"A version adding 24-month trended data — falling balances help, rising balances flag. Adoption varies; FICO 8 remains the baseline."},{"q":"Can I raise both at once?","a":"Yes. Both reward on-time payments, low utilization, and accurate files. Improving the shared inputs lifts every model."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Scores &middot; Models compared
@@ -23,8 +27,12 @@ export default function FicoVsVantagePage() {
           weights, minimum-history rules, and lender audiences differ. Learn which number matters
           where, and why your two free scores disagree.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -140,27 +148,31 @@ export default function FicoVsVantagePage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Why do my scores differ?</h3>
-              <p className="mt-1">Different weights, tier definitions, and bureau files. Gaps of 20&ndash;40 points on the same file are normal.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Which matters more to lenders?</h3>
-              <p className="mt-1">FICO in most mortgage, auto, and card decisions — roughly 90% of top-lender use. VantageScore adoption grows in cards and personal loans.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What is FICO 10T?</h3>
-              <p className="mt-1">A version adding 24-month trended data — falling balances help, rising balances flag. Adoption varies; FICO 8 remains the baseline.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Can I raise both at once?</h3>
-              <p className="mt-1">Yes. Both reward on-time payments, low utilization, and accurate files. Improving the shared inputs lifts every model.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Why do my scores differ?</summary>
+              <p className="mt-2">Different weights, tier definitions, and bureau files. Gaps of 20&ndash;40 points on the same file are normal.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Which matters more to lenders?</summary>
+              <p className="mt-2">FICO in most mortgage, auto, and card decisions — roughly 90% of top-lender use. VantageScore adoption grows in cards and personal loans.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What is FICO 10T?</summary>
+              <p className="mt-2">A version adding 24-month trended data — falling balances help, rising balances flag. Adoption varies; FICO 8 remains the baseline.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Can I raise both at once?</summary>
+              <p className="mt-2">Yes. Both reward on-time payments, low utilization, and accurate files. Improving the shared inputs lifts every model.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>

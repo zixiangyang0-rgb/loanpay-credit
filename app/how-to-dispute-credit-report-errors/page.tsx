@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "../components/AdSlot";
+import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
 
 export const metadata: Metadata = {
   title: "How to Dispute Credit Report Errors: FCRA Rights & Letters | LoanPay Credit",
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function DisputeErrorsPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-16 pt-8">
+      <ArticleJsonLd title="How to Dispute Credit Report Errors: FCRA Rights & Letters | LoanPay Credit" description="Your FCRA dispute rights explained — how to spot errors, write bureau disputes, track the 30-day investigation, and escalate — with tables and FAQs." slug="/how-to-dispute-credit-report-errors" />
+      <FaqJsonLd items={[{"q":"How long do investigations take?","a":"Generally 30 days from receipt, up to 45 if you add information mid-investigation. You receive written results."},{"q":"Do disputes hurt my score?","a":"Filing has no direct scoring penalty. Some mortgage underwriting pauses while disputes are open, so time disputes before rate shopping."},{"q":"Should I use a repair company?","a":"No company has special deletion powers. They file the same free disputes you can file, and upfront-fee promises violate federal rules."},{"q":"What if the bureau says verified?","a":"Dispute directly with the furnisher, then escalate to the CFPB with your paper trail. Consider legal consultation for willful inaccuracies."}]} />
       <section className="glass-panel page-aurora rounded-3xl px-8 py-12 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/80">
           Reports &middot; FCRA rights
@@ -23,8 +27,12 @@ export default function DisputeErrorsPage() {
           investigation within 30 days &mdash; free. Learn what qualifies, how to document it, and
           how to escalate when bureaus get it wrong.
         </p>
-        <p className="mt-4 text-xs text-slate-500">Updated: October 2026</p>
+        <Byline />
       </section>
+
+      <div className="mt-8">
+        <AdSlot format="display" slot="TODO-credit-article-top" />
+      </div>
 
       <article className="mt-10 space-y-8 text-sm leading-relaxed text-slate-300">
         <section className="glass-card rounded-2xl p-6 sm:p-8">
@@ -151,27 +159,31 @@ export default function DisputeErrorsPage() {
           </p>
         </section>
 
+        <AdSlot format="in-article" slot="TODO-credit-article-mid" />
+
         <section>
           <h2 className="text-xl font-bold text-white">Frequently asked questions</h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">How long do investigations take?</h3>
-              <p className="mt-1">Generally 30 days from receipt, up to 45 if you add information mid-investigation. You receive written results.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Do disputes hurt my score?</h3>
-              <p className="mt-1">Filing has no direct scoring penalty. Some mortgage underwriting pauses while disputes are open, so time disputes before rate shopping.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">Should I use a repair company?</h3>
-              <p className="mt-1">No company has special deletion powers. They file the same free disputes you can file, and upfront-fee promises violate federal rules.</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-              <h3 className="font-semibold text-white">What if the bureau says verified?</h3>
-              <p className="mt-1">Dispute directly with the furnisher, then escalate to the CFPB with your paper trail. Consider legal consultation for willful inaccuracies.</p>
-            </div>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">How long do investigations take?</summary>
+              <p className="mt-2">Generally 30 days from receipt, up to 45 if you add information mid-investigation. You receive written results.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Do disputes hurt my score?</summary>
+              <p className="mt-2">Filing has no direct scoring penalty. Some mortgage underwriting pauses while disputes are open, so time disputes before rate shopping.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">Should I use a repair company?</summary>
+              <p className="mt-2">No company has special deletion powers. They file the same free disputes you can file, and upfront-fee promises violate federal rules.</p>
+            </details>
+            <details className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+              <summary className="cursor-pointer font-semibold text-white">What if the bureau says verified?</summary>
+              <p className="mt-2">Dispute directly with the furnisher, then escalate to the CFPB with your paper trail. Consider legal consultation for willful inaccuracies.</p>
+            </details>
           </div>
         </section>
+
+        <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>
