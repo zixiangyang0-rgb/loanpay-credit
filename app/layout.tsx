@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     description:
       "Understand credit scores, compare card types, read your reports, and build credit step by step with free educational guides.",
   },
+  other: {
+    "google-adsense-account": "ca-pub-4906207495792820",
+  },
 };
 
 const navLinks = [
@@ -72,6 +75,13 @@ function Footer() {
       <p className="mt-4">
         &copy; {new Date().getFullYear()} credit.loanpaylogic.com. General education only, not
         financial advice.
+      </p>
+      <p className="mt-2 text-xs">
+        LoanPay Logic Network:{" "}
+        <a href="https://loanpaylogic.com" className="underline hover:text-white">Loan Calculators</a>{" "}
+        &middot; <a href="https://save.loanpaylogic.com" className="underline hover:text-white">Savings &amp; CDs</a>{" "}
+        &middot; <a href="https://auto.loanpaylogic.com" className="underline hover:text-white">Auto Loans</a>{" "}
+        &middot; <a href="https://guides.loanpaylogic.com" className="underline hover:text-white">Finance Guides</a>
       </p>
     </footer>
   );
