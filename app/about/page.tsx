@@ -56,6 +56,25 @@ export default function AboutPage() {
           </p>
         </section>
         <section className="glass-card rounded-2xl p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-white">Who writes and reviews</h2>
+          <p className="mt-3">
+            <strong className="text-white">Sarah Mitchell, Senior Editor.</strong> Sarah
+            leads guide planning and owns the plain-language standard: every score band, fee,
+            and dispute step must be traceable to a primary source before it ships.
+          </p>
+          <p className="mt-3">
+            <strong className="text-white">David Chen, CPA, Reviewer.</strong> David checks
+            every worked example, APR computation, and tax-adjacent claim for accuracy, and signs
+            off on each guide&apos;s numbers before publication.
+          </p>
+          <p className="mt-3">
+            <strong className="text-white">Emily Roberts, Managing Editor.</strong> Emily runs
+            the update cycle: figures re-verified against issuer pages and CFPB publications,
+            stale comparisons rewritten, and every page re-stamped with its check date.
+            <span className="text-slate-400"> Updated: November 2026.</span>
+          </p>
+        </section>
+        <section className="glass-card rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">How we write</h2>
           <p className="mt-3">
             We research current issuer pages, the Consumer Financial Protection Bureau, and the
