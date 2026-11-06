@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../components/AdSlot";
 import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
+import { OfficialBox } from "../components/OfficialBox";
 
 export const metadata: Metadata = {
   title: "Missed Payment Credit Impact: 30/60/90-Day Damage & Recovery | LoanPay Credit",
@@ -169,6 +170,12 @@ export default function MissedPaymentPage() {
         </section>
 
         <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
+
+        <OfficialBox
+          govHref="https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-an-error-on-my-credit-report-en-314/"
+          govLabel="CFPB — How do I dispute an error on my credit report?"
+          govDesc="Federal dispute steps, timelines, and what to include."
+        />
 
         <section aria-label="Related guides" className="glass-card mt-10 rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Related guides</h2>

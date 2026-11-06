@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../components/AdSlot";
 import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
+import { OfficialBox } from "../components/OfficialBox";
 
 export const metadata: Metadata = {
   title: "Free Credit Report Guide: Weekly Reports & Reading Checklist | LoanPay Credit",
@@ -180,6 +181,12 @@ export default function FreeReportGuidePage() {
         </section>
 
         <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
+
+        <OfficialBox
+          govHref="https://consumer.ftc.gov/articles/free-credit-reports"
+          govLabel="FTC — Free credit reports"
+          govDesc="How to get free reports and spot impostor sites."
+        />
 
         <section aria-label="Related guides" className="glass-card mt-10 rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Related guides</h2>

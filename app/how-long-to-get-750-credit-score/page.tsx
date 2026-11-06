@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "../components/AdSlot";
 import { ArticleJsonLd, Byline, FaqJsonLd } from "../components/schema";
+import { OfficialBox } from "../components/OfficialBox";
 
 export const metadata: Metadata = {
   title: "How Long Does It Take to Get a 750 Credit Score? Timelines | LoanPay Credit",
@@ -253,6 +254,12 @@ export default function HowLongTo750Page() {
         </section>
 
         <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
+
+        <OfficialBox
+          govHref="https://www.consumerfinance.gov/ask-cfpb/what-is-a-credit-report-en-309/"
+          govLabel="CFPB — What is a credit report?"
+          govDesc="Federal explainer on what reports contain and how they are used."
+        />
 
         <section aria-label="Related guides" className="glass-card mt-10 rounded-2xl p-6 sm:p-8">
           <h2 className="text-xl font-bold text-white">Related guides</h2>
