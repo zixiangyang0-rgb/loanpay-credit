@@ -175,6 +175,16 @@ export default function StoreCardsPage() {
 
         <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
+        <section aria-label="Related guides" className="glass-card mt-10 rounded-2xl p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <nav aria-label="Related guides" className="mt-4 grid gap-3 sm:grid-cols-2">
+            <Link href="/starter-credit-cards-guide-2026" className="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm font-semibold text-amber-200 transition hover:border-amber-200/30 hover:text-amber-100">Starter Credit Cards Guide 2026</Link>
+            <Link href="/secured-credit-cards-guide" className="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm font-semibold text-amber-200 transition hover:border-amber-200/30 hover:text-amber-100">Secured Credit Cards Guide</Link>
+            <Link href="/cash-back-vs-travel-rewards" className="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm font-semibold text-amber-200 transition hover:border-amber-200/30 hover:text-amber-100">Cash Back vs. Travel Rewards</Link>
+            <Link href="/credit-utilization-guide" className="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm font-semibold text-amber-200 transition hover:border-amber-200/30 hover:text-amber-100">Credit Utilization Guide</Link>
+          </nav>
+        </section>
+
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>
             This is general education, not financial advice. Retail terms change; verify APRs and

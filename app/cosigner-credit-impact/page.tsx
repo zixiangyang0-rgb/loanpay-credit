@@ -177,6 +177,16 @@ export default function CosignerPage() {
 
         <AdSlot format="multiplex" slot="TODO-credit-article-bottom" />
 
+        <section aria-label="Related guides" className="glass-card mt-10 rounded-2xl p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-white">Related guides</h2>
+          <nav aria-label="Related guides" className="mt-4 grid gap-3 sm:grid-cols-2">
+            <Link href="/authorized-user-guide" className="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm font-semibold text-amber-200 transition hover:border-amber-200/30 hover:text-amber-100">Authorized User Guide</Link>
+            <Link href="/joint-account-vs-authorized-user" className="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm font-semibold text-amber-200 transition hover:border-amber-200/30 hover:text-amber-100">Joint Account vs. Authorized User</Link>
+            <Link href="/building-credit-from-zero" className="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm font-semibold text-amber-200 transition hover:border-amber-200/30 hover:text-amber-100">Building Credit From Zero</Link>
+            <Link href="/missed-payment-credit-impact" className="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm font-semibold text-amber-200 transition hover:border-amber-200/30 hover:text-amber-100">Missed Payment Credit Impact</Link>
+          </nav>
+        </section>
+
         <section className="rounded-xl border border-amber-200/20 bg-amber-200/5 p-5 text-xs leading-relaxed text-amber-100/90">
           <p>
             This is general education, not financial advice. Loan terms and release policies vary;
