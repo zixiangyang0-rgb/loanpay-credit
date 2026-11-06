@@ -11,6 +11,7 @@ const ROUTES: { url: string; priority: number; changeFrequency: "weekly" | "mont
   { url: "/fico-vs-vantagescore", priority: 0.8, changeFrequency: "monthly" },
   { url: "/how-often-credit-score-updates", priority: 0.8, changeFrequency: "monthly" },
   { url: "/credit-score-home-buying-link", priority: 0.8, changeFrequency: "monthly" },
+  { url: "/how-long-to-get-750-credit-score", priority: 0.9, changeFrequency: "monthly" },
   // Cards
   { url: "/secured-credit-cards-guide", priority: 0.9, changeFrequency: "monthly" },
   { url: "/starter-credit-cards-guide-2026", priority: 0.9, changeFrequency: "monthly" },
@@ -19,6 +20,7 @@ const ROUTES: { url: string; priority: number; changeFrequency: "weekly" | "mont
   { url: "/store-credit-cards-pros-cons", priority: 0.8, changeFrequency: "monthly" },
   { url: "/business-credit-cards-basics", priority: 0.8, changeFrequency: "monthly" },
   { url: "/credit-utilization-guide", priority: 0.9, changeFrequency: "monthly" },
+  { url: "/credit-utilization-paydown-calculator", priority: 0.9, changeFrequency: "monthly" },
   { url: "/credit-limit-increase-guide", priority: 0.8, changeFrequency: "monthly" },
   // Reports & protection
   { url: "/free-credit-report-guide", priority: 0.9, changeFrequency: "monthly" },
