@@ -33,7 +33,9 @@ export default function ContactPage() {
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         Senior Editor Sarah Mitchell triages the inbox each weekday. Factual corrections go to
         Reviewer David Chen, CPA, for same-week verification against issuer pages and CFPB
-        publications; confirmed errors are fixed and re-stamped within days. Topic requests join
+        publications; confirmed errors are fixed and re-stamped within days. Managing Editor
+        Emily Roberts oversees the reply queue and the update cycle, so no correction sits
+        longer than a week. Topic requests join
         the planning backlog — reader mail has seeded several of our most-read guides. We aim to
         reply to every substantive message within five business days. We never sell links, sell
         placement, or publish sponsored comparisons; advertising runs through Google AdSense under
